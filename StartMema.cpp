@@ -14,7 +14,7 @@ using namespace std;
 const int szerokosc = 49;  
 const int wysokosc = 49;
 
-
+//ustawianie startu itd
 /*
 void StartMema(char tablica[szerokosc][wysokosc]){ // wybranie startu i mety mozna zmienic
 
@@ -82,6 +82,21 @@ int main(int argc, char **arfv){
 //************************************************************************************
 // tworzy labirynt
 //    int wybor;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     for(int i=0;i<wysokosc;i++)
         for(int j=0;j<szerokosc;j++) // zape³nia ca³a tablice sciana
         {
