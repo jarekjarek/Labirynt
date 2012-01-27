@@ -63,3 +63,74 @@ void StartMema(char tablica[szerokosc][wysokosc]){ // wybranie startu i mety moz
 
 }
 */
+
+int main(int argc, char **arfv){
+
+
+    int wybor=0;
+    srand((int)time(0));
+
+    char ludek[szerokosc][wysokosc];
+    char tablica[szerokosc][wysokosc];
+//    char tmpludek;
+
+
+
+
+
+
+//************************************************************************************
+    //************************************************************************************
+    // tworzy labirynt
+    //    int wybor;
+        for(int i=0;i<wysokosc;i++)
+            for(int j=0;j<szerokosc;j++) // zape³nia ca³a tablice sciana
+            {
+                ludek[j][i]='X';
+                tablica[j][i]='X';
+            }
+
+        for(int i=1;i<wysokosc-1;i+=2)
+            for(int j=1;j<szerokosc-1;j+=2) // Co 2 pole wstawia w tablicy wstawia puste miejsce
+            {tablica[j][i]=' ';ludek[j][i]=' ';}
+
+        for(int i=2;i<wysokosc-1;i+=2)
+            for(int j=1;j<szerokosc-1;j+=2) //Jedzie od gory i od prawej strony co 2 kratke i losuje czy ma zostac sciana czy puste miejsce
+            {
+                wybor=rand()%2;
+                if(wybor)tablica[j][i]=' ';
+                if(wybor)ludek[j][i]=' ';
+            }
+
+        for(int i=1;i<wysokosc-1;i+=2)
+            for(int j=2;j<szerokosc;j+=2)
+            {
+                wybor=rand()%2;
+                if(wybor)tablica[j][i]=' ';
+                if(wybor)ludek[j][i]=' ';
+            }
+
+        for(int i=1;i<wysokosc-1;i+=2)
+            for(int j=2;j<szerokosc;j+=2)
+            {
+                wybor=rand()%2;
+                if(wybor)tablica[j][i]=' ';
+                if(wybor)ludek[j][i]=' ';
+            }
+
+    //*************************************************************************
+
+            //wyswietla labirynt
+
+
+    // ***************************************************************************
+        //    szuka drogi
+
+        int idz1=1,idz2=1;
+        tablica[idz1][idz2] = 'L';
+        ludek[idz1][idz2] = 'L';
+
+        tablica[46][46] = 'M';
+        tablica[46][46] = 'M';
+    //system("cls");
+    //*************************************************************************
